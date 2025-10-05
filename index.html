@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gianmarco Fortunelli</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'><text x='-18' y='50' font-size='64'>👋</text></svg>" type="image/svg+xml">
+
+  <style>
+    * { font-family: Arial, sans-serif; box-sizing: border-box; }
+    body {
+      margin: 0;
+      background-color: #121212;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
+    header h1 {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      margin: 0;
+    }
+    header h2 {
+      font-size: clamp(1rem, 3.5vw, 1.2rem);
+      font-weight: normal;
+      color: #aaa;
+      margin-top: .5rem;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      padding: 0 1rem;
+    }
+    section h2 {
+      font-size: clamp(1.3rem, 4vw, 1.6rem);
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: .3rem;
+    }
+
+    .card {
+      display: flex;
+      align-items: flex-start;
+      background: #1e1e1e;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1.2rem;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.3s;
+      flex-wrap: wrap;
+    }
+    .card:hover { background: #2a2a2a; }
+    .card img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      margin-right: 15px;
+      border-radius: 50%;
+      background: #fff;
+      flex-shrink: 0;
+    }
+    .card-content {
+      flex: 1;
+      min-width: 200px;
+    }
+    .card-content h3 {
+      margin: 0;
+      font-size: 1.1em;
+    }
+    .card-content p {
+      margin: 5px 0 0;
+      color: #bbb;
+      font-size: 0.95em;
+    }
+
+    #about {
+      text-align: center;
+      line-height: 1.4;
+    }
+    #about p {
+      font-size: 1.05em;
+      line-height: 1.5;
+      color: #ccc;
+      margin: 8px auto;
+      max-width: 850px;
+    }
+
+    .contacts {
+      text-align: center;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    .contacts h2 {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      margin-bottom: 10px;
+    }
+    .contacts p {
+      color: #aaa;
+      margin-bottom: 1.5rem;
+      font-size: 1.1em;
+    }
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .contact-buttons .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0.7rem 1.5rem;
+      border-radius: 10px;
+      background: #2a2a2a;
+      color: #e0e0e0;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+      font-size: 1rem;
+    }
+    .contact-buttons .btn:hover {
+      background: #444;
+    }
+
+    /* Media Queries */
+    @media (max-width: 600px) {
+      .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .card img {
+        margin: 0 0 10px 0;
+      }
+      .card-content h3 {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hello 👋, I am Gianmarco Fortunelli</h1>
+    <h2>Electronic Engineering Student - Embedded Systems</h2>
+  </header>
+
+ <section id="about">
+    <h2>About Me</h2>
+    <p>I’m currently pursuing my Master’s in Electronics Engineering at Politecnico di Torino, specializing in embedded systems.
+    My passion lies in computer architecture and how hardware enables computation.
+    I love exploring how low-level design choices impact performance and efficiency.</p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <a href="https://www.polito.it" class="card" target="_blank">
+      <img src="https://scontent.fpsr1-1.fna.fbcdn.net/v/t39.30808-1/307093618_461435992691539_4582770297088710600_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=8_VxeZtzH7EQ7kNvwEy2ynx&_nc_oc=Adm9IRY0sNV3hMfA1CfOLDrGBINvr4y6SZUexPB2p4YiS2umv7KCbs8_qshihq7u4QY&_nc_zt=24&_nc_ht=scontent.fpsr1-1.fna&_nc_gid=1CSlscARhJnS7SsxY2RpIg&oh=00_AfW65mt33yBXxG1IXWKvKIHM-k67urdVuRBHbk0wbEEVKg&oe=68A90D7F" alt="Politecnico di Torino">
+      <div class="card-content">
+        <h3>Teaching Assistant - Politecnico di Torino (2023-2024)</h3>
+        <p>Assistant in the Computer Science (Python) course.</p>
+      </div>
+    </a>
+    <a href="https://www.teamroboto.it/" class="card" target="_blank">
+      <img src="https://www.biennaletecnologia.it/wp-content/uploads/2024/03/roboto.jpg" alt="Team RoboTO">
+      <div class="card-content">
+        <h3>Electronics Division Leader - Team RoboTO (2023 - Present)</h3>
+        <p>Leader of the Electronics division for team RoboTO, a student association competing in the DJI
+Robomaster challenge. The main challenge of the division is the development of a
+supercapacitor unit to enhance the robot’s performance. Participated in the RMNA 2025
+competition in San Diego.
+</p>
+      </div>
+    </a>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <a href="https://www.polito.it" class="card" target="_blank">
+      <img src="https://scontent.fpsr1-1.fna.fbcdn.net/v/t39.30808-1/307093618_461435992691539_4582770297088710600_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=8_VxeZtzH7EQ7kNvwEy2ynx&_nc_oc=Adm9IRY0sNV3hMfA1CfOLDrGBINvr4y6SZUexPB2p4YiS2umv7KCbs8_qshihq7u4QY&_nc_zt=24&_nc_ht=scontent.fpsr1-1.fna&_nc_gid=1CSlscARhJnS7SsxY2RpIg&oh=00_AfW65mt33yBXxG1IXWKvKIHM-k67urdVuRBHbk0wbEEVKg&oe=68A90D7F" alt="Politecnico di Torino">
+      <div class="card-content">
+        <h3>Master’s in Electronic Engineering - Politecnico di Torino (2024 - Present)</h3>
+        <p>Specialization in Embedded Systems. GPA 29.1/30.</p>
+      </div>
+    </a>
+    <a href="https://www.polito.it" class="card" target="_blank">
+      <img src="https://scontent.fpsr1-1.fna.fbcdn.net/v/t39.30808-1/307093618_461435992691539_4582770297088710600_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=8_VxeZtzH7EQ7kNvwEy2ynx&_nc_oc=Adm9IRY0sNV3hMfA1CfOLDrGBINvr4y6SZUexPB2p4YiS2umv7KCbs8_qshihq7u4QY&_nc_zt=24&_nc_ht=scontent.fpsr1-1.fna&_nc_gid=1CSlscARhJnS7SsxY2RpIg&oh=00_AfW65mt33yBXxG1IXWKvKIHM-k67urdVuRBHbk0wbEEVKg&oe=68A90D7F" alt="Politecnico di Torino">
+      <div class="card-content">
+        <h3>Bachelor’s in Electronic Engineering - Politecnico di Torino (2021-2024)</h3>
+        <p>Final grade: 109/110. Thesis: FPGA digital control design for agro-tech sensor.</p>
+      </div>
+    </a>
+    <a href="https://en.tongji.edu.cn" class="card" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Tongji_Uni_logo.svg/1200px-Tongji_Uni_logo.svg.png" alt="Tongji University">
+      <div class="card-content">
+        <h3>Bachelor’s in Information Technology Engineering - Tongji University (2022-2024)</h3>
+        <p>Double degree program.</p>
+      </div>
+    </a>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <a href="#" class="card" target="_blank">
+      <div class="card-content">
+        <h3>DLX Processor</h3>
+        <p>RTL-level fully pipelined DLX processor including complete IS, hazard management, optimized microarchitecture, windowed RF, and branch prediction.</p>
+      </div>
+    </a>
+    <a href="https://github.com/GianmarcoFortunelli/PACMAN" class="card" target="_blank">
+      <div class="card-content">
+        <h3>PACMAN on NXP LPC1768</h3>
+        <p>Implementation of PACMAN on the NXP LPC1768 microcontroller and the LANDTIGER board, handling inputs and navigation using the A* algorithm</p>
+      </div>
+    </a>
+    <a href="https://github.com/GianmarcoFortunelli/MultiVth_power_optimization" class="card" target="_blank">
+      <div class="card-content">
+        <h3>Multi-Vth Power Optimization</h3>
+        <p> Development of a power optimization algorithm using multithreshold voltage (multi-Vth) techniques scripted in TCL.</p>
+      </div>
+    </a>
+  </section>
+
+  <section id="extracurricular">
+    <h2>Extracurricular</h2>
+    <a href="https://www.polito.it/didattica/didattica-attitudinale/honors-programs/percorso-intraprendenti" class="card" target="_blank">
+      <img src="https://bestr.it/filemanager/show/9dfbe1fe-d6aa-4f66-8b23-14c8df63c92f.png" alt="Polito Honors">
+      <div class="card-content">
+        <h3>Intraprendenti Project (2022)</h3>
+        <p>Selected among the top 200 students at Politecnico di Torino. Focus on problem-solving and teamwork.</p>
+      </div>
+    </a>
+    <a href="https://en.tongji.edu.cn" class="card" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Tongji_Uni_logo.svg/1200px-Tongji_Uni_logo.svg.png" alt="Research">
+      <div class="card-content">
+        <h3>Research Activity - Tongji University (2022-2023)</h3>
+        <p>Worked on EEG signal processing for brain-computer interfaces.</p>
+      </div>
+    </a>
+
+    <a href="https://www.unipg.it/en/" class="card" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Logo_unipg.svg/1200px-Logo_unipg.svg.png" alt="Research">
+      <div class="card-content">
+        <h3>Research Activity - UNIPG (2024-2025)</h3>
+        <p>Collaborated with Prof. S. Simonetti in research activities related to back brace. My goal is to
+design and evaluate the accuracy of a measuring system based on FSR sensors.</p>
+      </div>
+    </a>
+
+    <a href="https://www.instagram.com/polito_running_club" class="card" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Polito Running Club">
+      <div class="card-content">
+        <h3>Polito Running Club (2023 - 2025)</h3>
+        <p>Co-founded and grew a club to 1,500+ members, organizing weekly runs and large-scale events.</p>
+      </div>
+    </a>
+  </section>
+
+  <section class="contacts">
+    <h2>Get in Touch</h2>
+    <div class="contact-buttons">
+      <a href="gianmarcofortunelli@gmail.com" class="btn">✉️ Email</a>
+      <a href="https://www.linkedin.com/in/gianmarco-fortunelli-983218268/" target="_blank" class="btn">🔗 LinkedIn</a>
+      <a href="https://github.com/GianmarcoFortunelli" target="_blank" class="btn">💻 GitHub</a>
+    </div>
+  </section>
+
+
+
+</body>
+</html>
