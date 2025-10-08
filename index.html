@@ -78,10 +78,7 @@
       font-size: 0.95em;
     }
 
-    #about {
-      text-align: center;
-      line-height: 1.4;
-    }
+    #about { text-align: center; line-height: 1.4; }
     #about p {
       font-size: 1.05em;
       line-height: 1.5;
@@ -90,57 +87,23 @@
       max-width: 850px;
     }
 
-    .contacts {
-      text-align: center;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
-    .contacts h2 {
-      font-size: clamp(1.5rem, 5vw, 2rem);
-      margin-bottom: 10px;
-    }
-    .contacts p {
-      color: #aaa;
-      margin-bottom: 1.5rem;
-      font-size: 1.1em;
-    }
-    .contact-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    .contact-buttons .btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 0.7rem 1.5rem;
-      border-radius: 10px;
-      background: #2a2a2a;
-      color: #e0e0e0;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 0.3s;
-      font-size: 1rem;
-    }
-    .contact-buttons .btn:hover {
-      background: #444;
-    }
+    .badge-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+    .badge { background:#2a2a2a; border:1px solid #333; padding:.25rem .5rem; border-radius:999px; font-size:.9em; color:#ddd; }
+
+    .contacts { text-align: center; margin: 3rem auto; padding: 0 1rem; }
+    .contacts h2 { font-size: clamp(1.5rem, 5vw, 2rem); margin-bottom: 10px; }
+    .contacts p { color: #aaa; margin-bottom: 1.5rem; font-size: 1.1em; }
+    .contact-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+    .contact-buttons .btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0.7rem 1.5rem; border-radius: 10px; background: #2a2a2a; color: #e0e0e0; font-weight: bold; text-decoration: none; transition: background 0.3s; font-size: 1rem; }
+    .contact-buttons .btn:hover { background: #444; }
+
+    footer { text-align:center; color:#777; margin:3rem 0 2rem; font-size:.9em; }
 
     /* Media Queries */
     @media (max-width: 600px) {
-      .card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .card img {
-        margin: 0 0 10px 0;
-      }
-      .card-content h3 {
-        font-size: 1em;
-      }
+      .card { flex-direction: column; align-items: center; text-align: center; }
+      .card img { margin: 0 0 10px 0; }
+      .card-content h3 { font-size: 1em; }
     }
   </style>
 </head>
@@ -148,125 +111,226 @@
 
   <header>
     <h1>Hello 👋, I am Gianmarco Fortunelli</h1>
-    <h2>Electronic Engineering Student - Embedded Systems</h2>
+    <h2>Electronic Engineering Student — Embedded Systems & Hardware Security</h2>
   </header>
 
- <section id="about">
+  <section id="about">
     <h2>About Me</h2>
-    <p>I’m currently pursuing my Master’s in Electronics Engineering at Politecnico di Torino, specializing in embedded systems.
-    My passion lies in computer architecture and how hardware enables computation.
-    I love exploring how low-level design choices impact performance and efficiency.</p>
+    <p>I am an electronic engineering student passionate about computer architecture and how hardware enables computation. I am intrigued by how design choices at the electronic level shape performance and efficiency. I approach my studies with curiosity, initiative, and a proactive mindset. Outside academics, I enjoy endurance sports, which build discipline and resilience values that complement my dedication to self-improvement.</p>
   </section>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <a href="https://www.polito.it" class="card" target="_blank">
-      <img src="images/polito.jpg" alt="Politecnico di Torino">
-      <div class="card-content">
-        <h3>Teaching Assistant - Politecnico di Torino (2023-2024)</h3>
-        <p>Assistant in the Computer Science (Python) course.</p>
-      </div>
-    </a>
-    <a href="https://www.teamroboto.it/" class="card" target="_blank">
-      <img src="images/roboto.jpg" alt="Team RoboTO">
-      <div class="card-content">
-        <h3>Electronics Division Leader - Team RoboTO (2023 - Present)</h3>
-        <p>Leader of the Electronics division for team RoboTO, a student association competing in the DJI
-Robomaster challenge. The main challenge of the division is the development of a
-supercapacitor unit to enhance the robot’s performance. Participated in the RMNA 2025
-competition in San Diego.</p>
-      </div>
-    </a>
-  </section>
-
+ 
   <section id="education">
     <h2>Education</h2>
-    <a href="https://www.polito.it" class="card" target="_blank">
+
+    <a href="https://www.polito.it" class="card" target="_blank" rel="noopener">
       <img src="images/polito.jpg" alt="Politecnico di Torino">
       <div class="card-content">
-        <h3>Master’s in Electronic Engineering - Politecnico di Torino (2024 - Present)</h3>
-        <p>Specialization in Embedded Systems. GPA 29.1/30.</p>
+        <h3>Master’s in Electronic Engineering — Politecnico di Torino (2024 – Present)</h3>
+        <p>Specialization: Embedded Systems. GPA 29.1/30. Courses: Computer Architectures, Microelectronic Systems, Integrated Systems Architecture, Synthesis & Optimization of Digital Systems, Operating Systems.</p>
       </div>
     </a>
-    <a href="https://www.polito.it" class="card" target="_blank">
+
+    <a href="https://www.eurecom.fr/en" class="card" target="_blank" rel="noopener">
+      <img src="images/eurecom.jpg" alt="EURECOM">
+      <div class="card-content">
+        <h3>Master’s in Internet of Things (IoT) — EURECOM (2025 – Present)</h3>
+        <p>Double degree with PoliTo. Courses: Machine Learning & Intelligent Systems, Reinforcement Learning, System Security, Software Development. Semester project on RISC‑V vulnerabilities.</p>
+      </div>
+    </a>
+
+    <a href="https://www.polito.it" class="card" target="_blank" rel="noopener">
       <img src="images/polito.jpg" alt="Politecnico di Torino">
       <div class="card-content">
-        <h3>Bachelor’s in Electronic Engineering - Politecnico di Torino (2021-2024)</h3>
-        <p>Final grade: 109/110. Thesis: FPGA digital control design for agro-tech sensor.</p>
+        <h3>Bachelor’s in Electronic Engineering — Politecnico di Torino (2021 – 2024)</h3>
+        <p>Final grade: 109/110. Thesis: FPGA digital control design for agro‑tech sensor (complex ASM).</p>
       </div>
     </a>
-    <a href="https://en.tongji.edu.cn" class="card" target="_blank">
+
+    <a href="https://en.tongji.edu.cn" class="card" target="_blank" rel="noopener">
       <img src="images/tongji.jpg" alt="Tongji University">
       <div class="card-content">
-        <h3>Bachelor’s in Information Technology Engineering - Tongji University (2022-2024)</h3>
-        <p>Double degree program.</p>
+        <h3>Bachelor’s in Information Technology Engineering — Tongji University (2022 – 2024)</h3>
+        <p>Double degree program with PoliTo.</p>
       </div>
     </a>
   </section>
+
+ <section id="experience">
+    <h2>Experience</h2>
+
+    <a href="https://www.eurecom.fr/en" class="card" target="_blank" rel="noopener">
+      <img src="images/eurecom.jpg" alt="EURECOM">
+      <div class="card-content">
+        <h3>Graduate Researcher — EURECOM (2025 – Present)</h3>
+        <p>Research under Prof. Pacalet on hardware security and side-channel attacks on RISC-V processors. Focus on cache-timing vulnerabilities and microarchitectural leakage.</p>
+      </div>
+    </a>
+
+    <a href="https://www.teamroboto.it/" class="card" target="_blank" rel="noopener">
+      <img src="images/roboto.jpg" alt="Team RoboTO">
+      <div class="card-content">
+        <h3>Electronics Division Leader — Team RoboTO (2023 – 2025)</h3>
+        <p>Led the Electronics division for DJI RoboMaster. Developed and integrated supercapacitor modules for RMNA 2025 (San Diego). Mentored junior members and coordinated cross‑team activities.</p>
+      </div>
+    </a>
+
+    <a href="https://www.unipg.it/en/" class="card" target="_blank" rel="noopener">
+      <img src="images/unipg.jpg" alt="University of Perugia">
+      <div class="card-content">
+        <h3>Research Collaborator — University of Perugia (2024 – 2025)</h3>
+        <p>Worked with Prof. S. Simonetti on a back‑brace monitoring system using FSR sensors; designed and validated sensing and evaluation pipeline.</p>
+      </div>
+    </a>
+
+    <a href="https://www.polito.it" class="card" target="_blank" rel="noopener">
+      <img src="images/polito.jpg" alt="Politecnico di Torino">
+      <div class="card-content">
+        <h3>Teaching Assistant — Politecnico di Torino (2023 – 2024)</h3>
+        <p>Assisted the Computer Science (Python) course: programming labs, algorithmic design support, and student mentoring.</p>
+      </div>
+    </a>
+
+    <a href="https://en.tongji.edu.cn" class="card" target="_blank" rel="noopener">
+      <img src="images/tongji.jpg" alt="Tongji University">
+      <div class="card-content">
+        <h3>Undergraduate Researcher — Tongji University (2022 – 2023)</h3>
+        <p>EEG‑based brain–computer interfaces for emotion recognition under Prof. X. Gong; work published at IEEE ICNC‑FSKD 2024.</p>
+      </div>
+    </a>
+  </section>
+
 
   <section id="projects">
     <h2>Projects</h2>
-    <a href="#" class="card" target="_blank">
+
+    <a href="#" class="card" target="_blank" rel="noopener">
       <div class="card-content">
-        <h3>DLX Processor</h3>
-        <p>RTL-level fully pipelined DLX processor including complete IS, hazard management, optimized microarchitecture, windowed RF, and branch prediction.</p>
+        <h3>DLX Pipelined Processor</h3>
+        <p>RTL implementation of a fully pipelined DLX with full ISA support, branch prediction, hazard management, and optimized datapath. Verified in VHDL with waveform analysis.</p>
       </div>
     </a>
-    <a href="https://github.com/GianmarcoFortunelli/PACMAN" class="card" target="_blank">
+
+    <a href="https://github.com/GianmarcoFortunelli/PACMAN" class="card" target="_blank" rel="noopener">
       <div class="card-content">
         <h3>PACMAN on NXP LPC1768</h3>
-        <p>Implementation of PACMAN on the NXP LPC1768 microcontroller and the LANDTIGER board, handling inputs and navigation using the A* algorithm</p>
+        <p>Custom Pac‑Man on LandTiger LPC1768 using Keil uVision. Implemented A* pathfinding, chase/frightened modes, scoring, timing, and sound effects.</p>
       </div>
     </a>
-    <a href="https://github.com/GianmarcoFortunelli/MultiVth_power_optimization" class="card" target="_blank">
+
+    <a href="https://github.com/GianmarcoFortunelli/MultiVth_power_optimization" class="card" target="_blank" rel="noopener">
       <div class="card-content">
-        <h3>Multi-Vth Power Optimization</h3>
-        <p>Development of a power optimization algorithm using multithreshold voltage (multi-Vth) techniques scripted in TCL.</p>
+        <h3>Multi‑Vth Power Optimization</h3>
+        <p>TCL-based flow that reduces leakage by swapping to higher‑Vth cells while preserving timing (automation around Synopsys PrimeTime).</p>
       </div>
     </a>
   </section>
 
-  <section id="extracurricular">
-    <h2>Extracurricular</h2>
-    <a href="https://www.polito.it/didattica/didattica-attitudinale/honors-programs/percorso-intraprendenti" class="card" target="_blank">
-      <img src="images/honors.jpg" alt="Polito Honors">
-      <div class="card-content">
-        <h3>Intraprendenti Project (2022)</h3>
-        <p>Selected among the top 200 students at Politecnico di Torino. Focus on problem-solving and teamwork.</p>
-      </div>
-    </a>
-    <a href="https://en.tongji.edu.cn" class="card" target="_blank">
-      <img src="images/tongji.jpg" alt="Research Tongji">
-      <div class="card-content">
-        <h3>Research Activity - Tongji University (2022-2023)</h3>
-        <p>Worked on EEG signal processing for brain-computer interfaces.</p>
-      </div>
-    </a>
+  <section id="publications-awards">
+    <h2>Publications</h2>
 
-    <a href="https://www.unipg.it/en/" class="card" target="_blank">
-      <img src="images/unipg.jpg" alt="Research UNIPG">
+    <a href="https://doi.org/10.1109/ICNC-FSKD64080.2024.10702312" class="card" target="_blank" rel="noopener">
       <div class="card-content">
-        <h3>Research Activity - UNIPG (2024-2025)</h3>
-        <p>Collaborated with Prof. S. Simonetti in research activities related to back brace. My goal is to
-design and evaluate the accuracy of a measuring system based on FSR sensors.</p>
+        <h3>Phase‑Amplitude Coupling of EEG Applied in Music‑Induced Emotional Recognition Tasks</h3>
+        <p>M. Zhao, G. Fortunelli, Z. He, X. Gong, A. Cohn. Published on IEEE ICNC‑FSKD 2024.</p>
       </div>
     </a>
+ 
 
-    <a href="https://www.instagram.com/polito_running_club" class="card" target="_blank">
-      <img src="images/runclub.jpg" alt="Polito Running Club">
+
+<div class="card">
+<div class="card-content">
+<h3>Politong Scholarship</h4>
+<p>Double Degree PoliTo–Tongji</p>
+</div>
+</div>
+
+
+<div class="card">
+<div class="card-content">
+<h3>Erasmus Scholarship</h4>
+<p>Double Degree PoliTo–EURECOM</p>
+</div>
+</div>
+
+
+
+<div class="card">
+<div class="card-content">
+<h3>Matematica e Realtà</h4>
+<p>National Math Competition Winner (2021)</p>
+</div>
+</div>
+</section>
+
+
+<script>
+function openAward(evt, awardId) {
+var i, tabcontent, tablinks;
+tabcontent = document.getElementsByClassName("tabcontent");
+for (i = 0; i < tabcontent.length; i++) {
+tabcontent[i].style.display = "none";
+}
+tablinks = document.getElementsByClassName("tablinks");
+for (i = 0; i < tablinks.length; i++) {
+tablinks[i].className = tablinks[i].className.replace(" active", "");
+}
+document.getElementById(awardId).style.display = "block";
+evt.currentTarget.className += " active";
+}
+</script>
+
+
+<style>
+.tab { overflow:hidden; border-bottom:1px solid #333; margin-bottom:1rem; }
+.tab button { background:#2a2a2a; border:none; outline:none; cursor:pointer; padding:0.6rem 1rem; transition:0.3s; color:#e0e0e0; margin-right:4px; border-radius:6px 6px 0 0; }
+.tab button:hover { background:#444; }
+.tab button.active { background:#555; }
+.tabcontent { padding:0.8rem 0; }
+</style>
+
+<section id="extracurricular">
+  <h2>Extracurricular</h2>
+
+  <a href="https://www.instagram.com/polito_running_club" class="card" target="_blank" rel="noopener">
+    <img src="images/runclub.jpg" alt="Polito Running Club" />
+    <div class="card-content">
+      <h3>Polito Running Club (2023 – 2025)</h3>
+      <p>Co-founded and grew a community to 1,500+ members; organized weekly runs and large-scale events to promote well-being on campus.</p>
+    </div>
+  </a>
+
+  <a href="https://www.polito.it/didattica/didattica-attitudinale/honors-programs/percorso-intraprendenti" class="card" target="_blank" rel="noopener">
+    <img src="images/honors.jpg" alt="Progetto Intraprendenti" />
+    <div class="card-content">
+      <h3>Intraprendenti Project (2022)</h3>
+      <p>Honors program focused on problem-solving and teamwork; selected among the top 200 students at Politecnico di Torino.</p>
+    </div>
+  </a>
+</section>
+
+
+  <section id="skills">
+    <h2>Skills & Languages</h2>
+    <div class="card">
       <div class="card-content">
-        <h3>Polito Running Club (2023 - 2025)</h3>
-        <p>Co-founded and grew a club to 1,500+ members, organizing weekly runs and large-scale events.</p>
+        <h3>Programming</h3>
+        <p>C, Python, TCL, Assembly (MIPS, ARM), MATLAB, Git, LaTeX</p>
+        <h3 style="margin-top:.6rem;">Hardware Description</h3>
+        <p>VHDL</p>
+        <h3 style="margin-top:.6rem;">Tools</h3>
+        <p>KiCad, QuestaSim, Quartus, ModelSim</p>
+        <h3 style="margin-top:.6rem;">Languages</h3>
+        <p>Italian (Native), English (Advanced C1), French (Basic), Chinese (Basic)</p>
       </div>
-    </a>
+    </div>
   </section>
 
-  <section class="contacts">
-    <h2>Get in Touch</h2>
+  <section class="contacts" id="contact">
     <div class="contact-buttons">
       <a href="mailto:gianmarcofortunelli@gmail.com" class="btn">✉️ Email</a>
-      <a href="https://www.linkedin.com/in/gianmarco-fortunelli-983218268/" target="_blank" class="btn">🔗 LinkedIn</a>
-      <a href="https://github.com/GianmarcoFortunelli" target="_blank" class="btn">💻 GitHub</a>
+      <a href="https://www.linkedin.com/in/gianmarco-fortunelli-983218268/" target="_blank" class="btn" rel="noopener">🔗 LinkedIn</a>
+      <a href="https://github.com/GianmarcoFortunelli" target="_blank" class="btn" rel="noopener">💻 GitHub</a>
     </div>
   </section>
 
