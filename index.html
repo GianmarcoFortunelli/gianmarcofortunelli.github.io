@@ -264,31 +264,6 @@
 </section>
 
 
-<script>
-function openAward(evt, awardId) {
-var i, tabcontent, tablinks;
-tabcontent = document.getElementsByClassName("tabcontent");
-for (i = 0; i < tabcontent.length; i++) {
-tabcontent[i].style.display = "none";
-}
-tablinks = document.getElementsByClassName("tablinks");
-for (i = 0; i < tablinks.length; i++) {
-tablinks[i].className = tablinks[i].className.replace(" active", "");
-}
-document.getElementById(awardId).style.display = "block";
-evt.currentTarget.className += " active";
-}
-</script>
-
-
-<style>
-.tab { overflow:hidden; border-bottom:1px solid #333; margin-bottom:1rem; }
-.tab button { background:#2a2a2a; border:none; outline:none; cursor:pointer; padding:0.6rem 1rem; transition:0.3s; color:#e0e0e0; margin-right:4px; border-radius:6px 6px 0 0; }
-.tab button:hover { background:#444; }
-.tab button.active { background:#555; }
-.tabcontent { padding:0.8rem 0; }
-</style>
-
 <section id="extracurricular">
   <h2>Extracurricular</h2>
 
