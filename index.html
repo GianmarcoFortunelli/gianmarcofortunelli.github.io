@@ -111,7 +111,7 @@
 
   <header>
     <h1>Hello 👋, I am Gianmarco Fortunelli</h1>
-    <h2>Electronic Engineering Student — Embedded Systems & Hardware Security</h2>
+    <h2>Electronic Engineering Student - Embedded Systems & Hardware Security</h2>
   </header>
 
   <section id="about">
@@ -122,6 +122,14 @@
  
   <section id="education">
     <h2>Education</h2>
+    
+    <a href="https://www.ethz.ch" class="card" target="_blank" rel="noopener">
+      <img src="images/ethz.jpg" alt="ETH">
+      <div class="card-content">
+        <h3>Master’s Thesis Student — ETHz (2026 – Present)</h3>
+        <p>Designing a configurable multi-datatype arithmetic unit for ML workloads. Extending the MXDOTP RISC-V ISA extension to support FP16 accumulation and mixed-datatype operations (e.g., INT4xFP8). Supervised by Danilo Cammarata, Gamze Islamoglu, and Prof. Dr. L. Benini.</p>
+      </div>
+    </a>
 
     <a href="https://www.polito.it" class="card" target="_blank" rel="noopener">
       <img src="images/polito.jpg" alt="Politecnico di Torino">
@@ -203,6 +211,12 @@
 
   <section id="projects">
     <h2>Projects</h2>
+   <a href="#" class="card" target="_blank" rel="noopener">
+      <div class="card-content">
+        <h3>Multichannel Conv1D Hardware Accelerator</h3>
+        <p>Designed an RTL 1D convolution accelerator optimized for strict architectural constraints (4 multipliers, 4 adders, 512 B scratchpad). Maximized data reuse via an output-centric scheduling and tiling strategy. Integrated the IP into the Croc SoC, developing bare-metal C drivers for memory transfers. Verified via Verilator and an open-source RTL-to-GDSII flow, achieving a 149.5x speedup.</p>
+      </div>
+    </a>
 
     <a href="#" class="card" target="_blank" rel="noopener">
       <div class="card-content">
@@ -311,3 +325,4 @@
 
 </body>
 </html>
+
