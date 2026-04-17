@@ -3,330 +3,1247 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="KONqvhmZNx6AgqfirWbbGt-42EU5bqwzqbMi4gh2FRo" />
+  <meta name="google-site-verification" content="KONqvhmZNx6AgqfirWbbGt-42EU5bqwzqbMi4gh2FRo">
+  <meta
+    name="description"
+    content="Gianmarco Fortunelli - Electronic engineering student focused on computer architecture, RTL design, ASIC, and hardware security."
+  >
   <title>Gianmarco Fortunelli</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'><text x='-18' y='50' font-size='64'>👋</text></svg>" type="image/svg+xml">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230c121b'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='28'%3E%F0%9F%91%8B%3C/text%3E%3C/svg%3E"
+    type="image/svg+xml"
+  >
   <style>
-    * { font-family: Arial, sans-serif; box-sizing: border-box; }
+    :root {
+      --bg: #091018;
+      --paper: rgba(13, 20, 31, 0.9);
+      --paper-strong: #111a26;
+      --ink: #f3f6fb;
+      --muted: #9aa8bb;
+      --line: rgba(255, 255, 255, 0.08);
+      --line-strong: rgba(255, 255, 255, 0.16);
+      --accent: #ff8d4d;
+      --accent-soft: rgba(255, 141, 77, 0.16);
+      --accent-deep: #ffc29a;
+      --highlight: #73f0be;
+      --shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      background-color: #121212;
-      color: #e0e0e0;
-      line-height: 1.6;
+      color: var(--ink);
+      font-family: "IBM Plex Sans", sans-serif;
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at top left, rgba(255, 141, 77, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(115, 240, 190, 0.12), transparent 28%),
+        linear-gradient(180deg, #070b12 0%, #091019 38%, #0c131d 100%);
+      min-height: 100vh;
     }
 
-    header {
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-    }
-    header h1 {
-      font-size: clamp(1.8rem, 5vw, 2.5rem);
-      margin: 0;
-    }
-    header h2 {
-      font-size: clamp(1rem, 3.5vw, 1.2rem);
-      font-weight: normal;
-      color: #aaa;
-      margin-top: .5rem;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 2.5rem auto;
-      padding: 0 1rem;
-    }
-    section h2 {
-      font-size: clamp(1.3rem, 4vw, 1.6rem);
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #333;
-      padding-bottom: .3rem;
-    }
-
-    .card {
-      display: flex;
-      align-items: flex-start;
-      background: #1e1e1e;
-      border-radius: 10px;
-      padding: 1rem;
-      margin-bottom: 1.2rem;
-      text-decoration: none;
+    a {
       color: inherit;
-      transition: background 0.3s;
-      flex-wrap: wrap;
     }
-    .card:hover { background: #2a2a2a; }
-    .card img {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      margin-right: 15px;
-      border-radius: 50%;
-      background: #fff;
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page-shell {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+      padding: 24px 0 56px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 16px;
+      z-index: 20;
+      margin-bottom: 28px;
+      backdrop-filter: blur(12px);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      background: rgba(11, 18, 28, 0.74);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #141d2b, #243247);
+      color: #fff4ea;
+      font-weight: 700;
+      font-size: 1.2rem;
       flex-shrink: 0;
     }
-    .card-content {
-      flex: 1;
-      min-width: 200px;
+
+    .brand-copy span {
+      display: block;
     }
-    .card-content h3 {
+
+    .brand-copy .name {
+      font-weight: 700;
+      font-size: 0.98rem;
+    }
+
+    .brand-copy .role {
+      color: #b1bdd0;
+      font-size: 0.84rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #b3bece;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #f3f6fb;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.95fr);
+      gap: 28px;
+      padding: 42px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: calc(var(--radius-xl) + 8px);
+      background:
+        linear-gradient(145deg, rgba(18, 28, 42, 0.92), rgba(11, 18, 29, 0.94)),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -110px;
+      bottom: -110px;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 141, 77, 0.18), transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 141, 77, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 141, 77, 0.12);
+      color: #ffb88c;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      margin: 18px 0 12px;
+      font-family: "Fraunces", serif;
+      font-size: clamp(2.7rem, 7vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      max-width: 10ch;
+    }
+
+    .hero .lead {
+      margin: 0 0 22px;
+      color: #aeb8c8;
+      font-size: 1.08rem;
+      max-width: 62ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(23, 36, 50, 0.1);
+    }
+
+    .button-primary {
+      background: #ffb783;
+      color: #091018;
+      border-color: rgba(255, 183, 131, 0.55);
+    }
+
+    .button-secondary {
+      border-color: rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.04);
+      color: #f3f6fb;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
       margin: 0;
-      font-size: 1.1em;
-    }
-    .card-content p {
-      margin: 5px 0 0;
-      color: #bbb;
-      font-size: 0.95em;
+      list-style: none;
     }
 
-    #about { text-align: center; line-height: 1.4; }
-    #about p {
-      font-size: 1.05em;
-      line-height: 1.5;
-      color: #ccc;
-      margin: 8px auto;
-      max-width: 850px;
+    .hero-tags li {
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: #c1cad7;
+      font-size: 0.92rem;
+      font-weight: 600;
     }
 
-    .badge-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
-    .badge { background:#2a2a2a; border:1px solid #333; padding:.25rem .5rem; border-radius:999px; font-size:.9em; color:#ddd; }
+    .hero-panel {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 16px;
+      align-content: start;
+      padding: 24px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(6, 10, 16, 0.96), rgba(11, 17, 25, 0.96));
+      color: #f3f6fb;
+    }
 
-    .contacts { text-align: center; margin: 3rem auto; padding: 0 1rem; }
-    .contacts h2 { font-size: clamp(1.5rem, 5vw, 2rem); margin-bottom: 10px; }
-    .contacts p { color: #aaa; margin-bottom: 1.5rem; font-size: 1.1em; }
-    .contact-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
-    .contact-buttons .btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0.7rem 1.5rem; border-radius: 10px; background: #2a2a2a; color: #e0e0e0; font-weight: bold; text-decoration: none; transition: background 0.3s; font-size: 1rem; }
-    .contact-buttons .btn:hover { background: #444; }
+    .hero-panel h2 {
+      margin: 0;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(243, 246, 251, 0.62);
+    }
 
-    footer { text-align:center; color:#777; margin:3rem 0 2rem; font-size:.9em; }
+    .highlight-list {
+      display: grid;
+      gap: 14px;
+    }
 
-    /* Media Queries */
-    @media (max-width: 600px) {
-      .card { flex-direction: column; align-items: center; text-align: center; }
-      .card img { margin: 0 0 10px 0; }
-      .card-content h3 { font-size: 1em; }
+    .highlight-item {
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .highlight-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .highlight-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .highlight-item span {
+      color: rgba(243, 246, 251, 0.76);
+      font-size: 0.94rem;
+    }
+
+    main {
+      display: grid;
+      gap: 26px;
+      margin-top: 26px;
+    }
+
+    .panel {
+      padding: 34px;
+      border-radius: var(--radius-xl);
+      background: var(--paper);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: #a6b3c5;
+      max-width: 54ch;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .summary-card {
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      background: var(--paper-strong);
+      border: 1px solid var(--line);
+    }
+
+    .summary-card strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--accent-deep);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .summary-card p {
+      margin: 0;
+      color: #a6b3c5;
+      font-size: 0.96rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: var(--paper-strong);
+      border: 1px solid var(--line);
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 141, 77, 0.22);
+      box-shadow: 0 20px 34px rgba(0, 0, 0, 0.22);
+    }
+
+    .timeline-card::before {
+      content: "";
+      position: absolute;
+      left: 51px;
+      top: 22px;
+      bottom: -22px;
+      width: 1px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0));
+    }
+
+    .timeline-card:last-child::before {
+      display: none;
+    }
+
+    .timeline-media {
+      width: 68px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-media img {
+      width: 68px;
+      height: 68px;
+      border-radius: 18px;
+      object-fit: cover;
+      background: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .timeline-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin-bottom: 8px;
+      color: #a8b4c5;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .timeline-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.16rem;
+      line-height: 1.3;
+    }
+
+    .timeline-card p {
+      margin: 0;
+      color: #a8b4c5;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.9fr);
+      gap: 22px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .info-card {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: var(--paper-strong);
+      border: 1px solid var(--line);
+    }
+
+    .info-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+    }
+
+    .info-card p,
+    .info-card li {
+      color: #a8b4c5;
+    }
+
+    .info-card p {
+      margin: 0;
+    }
+
+    .skill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .skill-cloud span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(255, 141, 77, 0.12);
+      border: 1px solid rgba(255, 141, 77, 0.2);
+      color: #ffc29a;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project-card {
+      display: grid;
+      gap: 14px;
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      background: var(--paper-strong);
+      border: 1px solid var(--line);
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 141, 77, 0.24);
+      box-shadow: 0 20px 34px rgba(0, 0, 0, 0.24);
+    }
+
+    .project-label {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 32px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #c0cbda;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .project-card h3 {
+      margin: 0;
+      font-size: 1.18rem;
+      line-height: 1.3;
+    }
+
+    .project-card p {
+      margin: 0;
+      color: #a6b3c5;
+    }
+
+    .project-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      color: #ffc29a;
+      font-weight: 700;
+    }
+
+    .publication-card {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(7, 11, 18, 0.98), rgba(17, 26, 38, 0.96));
+      color: #f3f6fb;
+    }
+
+    .publication-card p {
+      margin: 0;
+      color: rgba(243, 246, 251, 0.84);
+    }
+
+    .publication-card a {
+      color: #ffc29a;
+      font-weight: 700;
+    }
+
+    .award-list,
+    .language-list {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .award-list li,
+    .language-list li {
+      padding: 16px 18px;
+      border-radius: var(--radius-md);
+      background: var(--paper-strong);
+      border: 1px solid var(--line);
+      color: #a6b3c5;
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) auto;
+      align-items: center;
+      gap: 22px;
+      padding: 30px 34px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(120deg, #05080d, #0f1723);
+      color: #f3f6fb;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-panel h2 {
+      margin: 0 0 8px;
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      line-height: 1;
+    }
+
+    .contact-panel p {
+      margin: 0;
+      color: rgba(243, 246, 251, 0.74);
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    .contact-actions .button-primary {
+      background: #ffb783;
+      color: #091018 !important;
+      border-color: rgba(255, 183, 131, 0.55);
+    }
+
+    .contact-actions .button-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #f3f6fb;
+      border-color: rgba(243, 246, 251, 0.18);
+    }
+
+    footer {
+      padding: 22px 0 8px;
+      text-align: center;
+      color: #8391a4;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 1024px) {
+      .hero,
+      .two-column,
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 800px) {
+      .page-shell {
+        width: min(calc(100% - 20px), var(--max-width));
+        padding-top: 14px;
+      }
+
+      .topbar {
+        position: static;
+      }
+
+      .topbar-inner,
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero,
+      .panel,
+      .contact-panel {
+        padding: 24px;
+      }
+
+      .project-grid,
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .timeline-card {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-card::before {
+        display: none;
+      }
+
+      .timeline-media {
+        width: 56px;
+      }
+
+      .timeline-media img {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+      }
+
+      .hero h1 {
+        max-width: none;
+      }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Hello 👋, I am Gianmarco Fortunelli</h1>
-    <h2>Electronic Engineering Student - Embedded Systems & Hardware Security</h2>
-  </header>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am an electronic engineering student passionate about computer architecture and how hardware enables computation. I am intrigued by how design choices at the electronic level shape performance and efficiency. I approach my studies with curiosity, initiative, and a proactive mindset. Outside academics, I enjoy endurance sports, which build discipline and resilience values that complement my dedication to self-improvement.</p>
-  </section>
-
- 
-  <section id="education">
-    <h2>Education</h2>
-    
-    <a href="https://www.ethz.ch" class="card" target="_blank" rel="noopener">
-      <img src="images/eth.jpg" alt="ETH">
-      <div class="card-content">
-        <h3>Master’s Thesis Student — ETHz (2026 – Present)</h3>
-        <p>Designing a configurable multi-datatype arithmetic unit for ML workloads. Extending the MXDOTP RISC-V ISA extension to support FP16 accumulation and mixed-datatype operations (e.g., INT4xFP8). Supervised by Danilo Cammarata, Gamze Islamoglu, and Prof. Dr. L. Benini.</p>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true">&#128075;</span>
+          <span class="brand-copy">
+            <span class="name">Gianmarco Fortunelli</span>
+            <span class="role">Computer Architecture, RTL Design, ASIC, Hardware Security</span>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="Section navigation">
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#profile">Profile</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
-    </a>
+    </header>
 
-    <a href="https://www.polito.it" class="card" target="_blank" rel="noopener">
-      <img src="images/polito.jpg" alt="Politecnico di Torino">
-      <div class="card-content">
-        <h3>Master’s in Electronic Engineering — Politecnico di Torino (2024 – Present)</h3>
-        <p>Specialization: Embedded Systems. GPA 29.1/30. Courses: Computer Architectures, Microelectronic Systems, Integrated Systems Architecture, Synthesis & Optimization of Digital Systems, Operating Systems.</p>
+    <section class="hero" id="top">
+      <div>
+        <span class="eyebrow">Electronic Engineering Student</span>
+        <h1>Building hardware with a systems mindset.</h1>
+        <p class="lead">
+          I am an electronic engineering student passionate about computer architecture and how hardware enables computation.
+          I am intrigued by how design choices at the electronic level shape performance, efficiency and security.
+          I am especially interested in RTL design, digital design, ASIC-oriented flows, RISC-V architecture, and hardware security.
+          I would like to continue working on RISC-V arithmetic units, secure RISC-V systems, and broader RTL-oriented research in computer architecture.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="mailto:gianmarcofortunelli@gmail.com">Email me</a>
+          <a
+            class="button button-secondary"
+            href="https://www.linkedin.com/in/gianmarco-fortunelli-983218268/"
+            target="_blank"
+            rel="noopener"
+          >LinkedIn</a>
+          <a
+            class="button button-secondary"
+            href="https://github.com/GianmarcoFortunelli"
+            target="_blank"
+            rel="noopener"
+          >GitHub</a>
+        </div>
+        <ul class="hero-tags" aria-label="Focus areas">
+          <li>Computer Architecture</li>
+          <li>Digital Design</li>
+          <li>Hardware Security</li>
+          <li>RTL Design</li>
+          <li>ASIC</li>
+          <li>RISC-V</li>
+        </ul>
       </div>
-    </a>
 
-    <a href="https://www.eurecom.fr/en" class="card" target="_blank" rel="noopener">
-      <img src="images/eurecom.jpg" alt="EURECOM">
-      <div class="card-content">
-        <h3>Master’s in Internet of Things (IoT) — EURECOM (2025 – Present)</h3>
-        <p>Double degree with PoliTo. Courses: Machine Learning & Intelligent Systems, Reinforcement Learning, System Security, Software Development. Semester project on RISC‑V vulnerabilities.</p>
+      <aside class="hero-panel" aria-label="Current snapshot">
+        <h2>Current Snapshot</h2>
+        <div class="highlight-list">
+          <div class="highlight-item">
+            <strong>ETH Zurich</strong>
+            <span>Current academic work on arithmetic-unit design, ML-oriented hardware, and RISC-V architecture.</span>
+          </div>
+          <div class="highlight-item">
+            <strong>PoliTo + EURECOM</strong>
+            <span>Double-degree path across computer architecture, machine learning, system security, and operating systems.</span>
+          </div>
+          <div class="highlight-item">
+            <strong>RTL Design</strong>
+            <span>Strong interest in digital design, microarchitecture, arithmetic units, and implementation-oriented hardware development.</span>
+          </div>
+          <div class="highlight-item">
+            <strong>Hardware Security</strong>
+            <span>Interested in secure RISC-V, cache-timing attacks, microarchitectural leakage, and security-aware computer architecture.</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <main>
+      <section class="panel" id="about">
+        <div class="section-head">
+          <div>
+            <h2>About</h2>
+          </div>
+        </div>
+
+        <div class="summary-grid">
+          <article class="summary-card">
+            <strong>Academic Experience</strong>
+            <p>Computer architecture, digital design, RTL design, embedded systems, and hardware-aware system implementation across coursework, projects, and research.</p>
+          </article>
+          <article class="summary-card">
+            <strong>Hardware Security</strong>
+            <p>Secure RISC-V systems, side channels, cache-timing attacks, and low-level architectural behavior.</p>
+          </article>
+          <article class="summary-card">
+            <strong>RTL Design</strong>
+            <p>Arithmetic units, RISC-V ISA extensions, accelerator design, microarchitecture, and SoC integration.</p>
+          </article>
+          <article class="summary-card">
+            <strong>Tooling</strong>
+            <p>Verilog, VHDL, Synopsys DC Shell, PrimeTime, QuestaSim, Verilator, QEMU, GCC, TCL, and low-level C workflows.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="education">
+        <div class="section-head">
+          <div>
+            <h2>Education</h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-card">
+            <div class="timeline-media">
+              <img src="images/eth.jpg" alt="ETH Zurich">
+            </div>
+            <div>
+              <div class="timeline-meta">
+                <span>ETH Zurich, Switzerland</span>
+                <span>2026 - Present</span>
+              </div>
+              <h3>Master's Thesis Student</h3>
+              <p>
+                Designing a configurable multi-datatype arithmetic unit for ML workloads. Extending the MXDOTP RISC-V ISA extension to support FP16 accumulation and mixed-datatype operations under the supervision of Danilo Cammarata, Gamze Islamoglu, and Prof. Dr. L. Benini.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-media">
+              <img src="images/polito.jpg" alt="Politecnico di Torino">
+            </div>
+            <div>
+              <div class="timeline-meta">
+                <span>Politecnico di Torino, Turin, Italy</span>
+                <span>2024 - Present</span>
+              </div>
+              <h3>Master's Degree in Electronic Engineering</h3>
+              <p>
+                Specialization in Embedded Systems. GPA 29.1/30. Main courses include Computer Architectures, Microelectronic Systems, Integrated Systems Architecture, Synthesis and Optimization of Digital Systems, and Operating Systems.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-media">
+              <img src="images/eurecom.jpg" alt="EURECOM">
+            </div>
+            <div>
+              <div class="timeline-meta">
+                <span>EURECOM, Sophia Antipolis, France</span>
+                <span>2025 - Present</span>
+              </div>
+              <h3>Master's Degree in Internet of Things</h3>
+              <p>
+                Double-degree program with Politecnico di Torino. Main courses include Machine Learning and Intelligent Systems, Reinforcement Learning, System Security, and Software Development. Semester project on RISC-V vulnerabilities.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-media">
+              <img src="images/polito.jpg" alt="Politecnico di Torino">
+            </div>
+            <div>
+              <div class="timeline-meta">
+                <span>Politecnico di Torino, Turin, Italy</span>
+                <span>2021 - 2024</span>
+              </div>
+              <h3>Bachelor's Degree in Electronic Engineering</h3>
+              <p>
+                Final grade: 109/110. Final project on the FPGA-based digital control of a sensor for agro-tech applications, based on complex ASM. Double-degree program with Tongji University, Shanghai, China.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="experience">
+        <div class="section-head">
+          <div>
+            <h2>Experience</h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-card">
+            <div class="timeline-media">
+              <img src="images/eurecom.jpg" alt="EURECOM">
+            </div>
+            <div>
+              <div class="timeline-meta">
+                <span>EURECOM, France</span>
+                <span>2025 - Present</span>
+              </div>
+              <h3>Graduate Researcher</h3>
+              <p>
+                Research under Prof. Pacalet on hardware security and side-channel attacks targeting RISC-V processors, with a focus on cache-timing vulnerabilities and microarchitectural leakage.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-media">
+              <img src="images/roboto.jpg" alt="Team RoboTO">
+            </div>
+            <div>
+              <div class="timeline-meta">
+                <span>Team RoboTO, Italy</span>
+                <span>2023 - 2025</span>
+              </div>
+              <h3>Electronics Division Leader</h3>
+              <p>
+                Led the electronics division, coordinated a student team, managed deadlines, and developed supercapacitor modules for RMNA 2025 in San Diego. Also mentored junior members and supported collaboration across divisions.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-media">
+              <img src="images/unipg.jpg" alt="University of Perugia">
+            </div>
+            <div>
+              <div class="timeline-meta">
+                <span>University of Perugia, Italy</span>
+                <span>2024 - 2025</span>
+              </div>
+              <h3>Research Collaborator</h3>
+              <p>
+                Worked under Prof. S. Simonetti on biomechanical support systems. Designed and validated a back brace monitoring system using force-sensing resistor sensors.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-media">
+              <img src="images/polito.jpg" alt="Politecnico di Torino">
+            </div>
+            <div>
+              <div class="timeline-meta">
+                <span>Politecnico di Torino, Italy</span>
+                <span>2023 - 2024</span>
+              </div>
+              <h3>Teaching Assistant</h3>
+              <p>
+                Teaching assistant for the Computer Science (Python) course in the academic year 2023/2024, supporting students during programming labs and algorithmic design activities.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-media">
+              <img src="images/tongji.jpg" alt="Tongji University">
+            </div>
+            <div>
+              <div class="timeline-meta">
+                <span>Tongji University, China</span>
+                <span>2022 - 2023</span>
+              </div>
+              <h3>Undergraduate Researcher</h3>
+              <p>
+                Supervised by Prof. X. Gong on biological signal processing and EEG-based brain-computer interfaces for emotion recognition. The work led to a publication at IEEE ICNC-FSKD 2024.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="projects">
+        <div class="section-head">
+          <div>
+            <h2>Selected Projects</h2>
+          </div>
+        </div>
+
+        <div class="project-grid">
+          <a
+            class="project-card"
+            href="https://github.com/GianmarcoFortunelli/Conv1D-Accelerator-Croc-SoC"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="project-label">Accelerator</span>
+            <h3>Multichannel Conv1D Hardware Accelerator</h3>
+            <p>
+              RTL 1D convolution accelerator designed under strict resource constraints, with output-centric scheduling, tiling, Croc SoC integration, bare-metal C drivers, and end-to-end validation through Verilator and RTL-to-GDSII tooling.
+            </p>
+            <div class="project-footer">
+              <span>View repository</span>
+              <span>149.5x speedup</span>
+            </div>
+          </a>
+
+          <a
+            class="project-card"
+            href="https://github.com/GianmarcoFortunelli/DLX-Processor"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="project-label">Processor Design</span>
+            <h3>Pipelined Processor</h3>
+            <p>
+              RTL implementation of a fully pipelined DLX processor with full instruction support, branch prediction, hazard management, forwarding logic, and a datapath optimized for digital-design performance exploration.
+            </p>
+            <div class="project-footer">
+              <span>View repository</span>
+              <span>VHDL pipeline</span>
+            </div>
+          </a>
+
+          <a
+            class="project-card"
+            href="https://github.com/GianmarcoFortunelli/Cache-Timing-AES-RISCV"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="project-label">Hardware Security</span>
+            <h3>Cache-Timing AES on RISC-V</h3>
+            <p>
+              Experimental Prime+Probe analysis of T-table AES on a RISC-V platform, with per-set leakage analysis, noise-aware classification, and partial key recovery.
+            </p>
+            <div class="project-footer">
+              <span>View repository</span>
+              <span>Side-channel analysis</span>
+            </div>
+          </a>
+
+          <a
+            class="project-card"
+            href="https://github.com/GianmarcoFortunelli/Linux-Scheduler-Experiments"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="project-label">Operating Systems</span>
+            <h3>Linux Scheduler Experiments</h3>
+            <p>
+              Linux scheduler experiments focused on low-level operating-systems behavior, scheduling exploration, and systems work around GCC and QEMU-based workflows.
+            </p>
+            <div class="project-footer">
+              <span>View repository</span>
+              <span>OS project</span>
+            </div>
+          </a>
+
+          <a
+            class="project-card"
+            href="https://github.com/GianmarcoFortunelli/PACMAN"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="project-label">Embedded</span>
+            <h3>PACMAN Embedded Game</h3>
+            <p>
+              Custom Pac-Man game for the LandTiger LPC1768 board built in Keil uVision, including movement, scoring, lives, timing, A* ghost behavior, chase and frightened modes, and sound effects.
+            </p>
+            <div class="project-footer">
+              <span>View repository</span>
+              <span>Embedded C</span>
+            </div>
+          </a>
+
+          <a
+            class="project-card"
+            href="https://github.com/GianmarcoFortunelli/MultiVth_power_optimization"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="project-label">ASIC Flow</span>
+            <h3>Multi-Vth Power Optimization Algorithm</h3>
+            <p>
+              TCL-based low-power optimization flow that reduces leakage by selectively swapping cells to higher-Vth variants while preserving timing, with automation for tuning and result aggregation in Synopsys PrimeTime.
+            </p>
+            <div class="project-footer">
+              <span>View repository</span>
+              <span>TCL and PrimeTime</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="panel" id="profile">
+        <div class="section-head">
+          <div>
+            <h2>Publication, Awards, and Profile</h2>
+          </div>
+        </div>
+
+        <div class="two-column">
+          <div class="stack">
+            <article class="publication-card">
+              <h3>Publication</h3>
+              <p>
+                M. Zhao, G. Fortunelli, Z. He, X. Gong, A. Cohn. <em>Phase-Amplitude Coupling of EEG Applied in Music-Induced Emotional Recognition Tasks.</em> ICNC-FSKD, IEEE, 2024.
+              </p>
+              <p style="margin-top: 12px;">
+                <a href="https://doi.org/10.1109/ICNC-FSKD64080.2024.10702312" target="_blank" rel="noopener">Read the paper</a>
+              </p>
+            </article>
+
+            <div class="info-card">
+              <h3>Technical Profile</h3>
+              <p>
+                Hands-on work across RTL design, Verilog and VHDL development, ASIC-oriented flows, Synopsys-based synthesis and timing work, QEMU and GCC low-level systems experimentation, and hardware security research on RISC-V platforms.
+              </p>
+              <div class="skill-cloud" aria-label="Technical skills">
+                <span>RTL Design</span>
+                <span>ASIC</span>
+                <span>Verilog</span>
+                <span>VHDL</span>
+                <span>C</span>
+                <span>Python</span>
+                <span>TCL</span>
+                <span>RISC-V</span>
+                <span>Synopsys DC Shell</span>
+                <span>Synopsys PrimeTime</span>
+                <span>QuestaSim</span>
+                <span>QEMU</span>
+                <span>GCC</span>
+                <span>Verilator</span>
+                <span>Side-Channel Analysis</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="info-card">
+              <h3>Awards</h3>
+              <ul class="award-list">
+                <li>Politong Scholarship for the PoliTo-Tongji double-degree program.</li>
+                <li>Erasmus Scholarship for the PoliTo-EURECOM double-degree program.</li>
+                <li>Progetto Intraprendenti Honors Program, selected among the top 200 students.</li>
+                <li>Matematica e Realta National Math Competition, winner of the 2021 edition.</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h3>Languages</h3>
+              <ul class="language-list">
+                <li>Italian - Native</li>
+                <li>English - Advanced C1</li>
+                <li>French - Basic</li>
+                <li>Chinese - Basic</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <div>
+            <h2>Extracurricular</h2>
+          </div>
+        </div>
+
+        <div class="two-column">
+          <article class="timeline-card">
+            <div class="timeline-media">
+              <img src="images/runclub.jpg" alt="Polito Running Club">
+            </div>
+            <div>
+              <div class="timeline-meta">
+                <span>Polito Running Club</span>
+                <span>2023 - 2025</span>
+              </div>
+              <h3>Co-Founder</h3>
+              <p>
+                Co-founded and managed a community of more than 1,500 members, organizing weekly events and large-scale collaborations with sportswear and automotive brands.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-media">
+              <img src="images/honors.jpg" alt="Progetto Intraprendenti">
+            </div>
+            <div>
+              <div class="timeline-meta">
+                <span>Progetto Intraprendenti</span>
+                <span>Honors Program</span>
+              </div>
+              <h3>Selected Student</h3>
+              <p>
+                Honors program focused on problem solving, teamwork, and high-potential student development at Politecnico di Torino.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <section class="contact-panel" id="contact">
+      <div>
+        <h2>Let's connect.</h2>
+        <p>
+          For research discussions, recruiting, or collaboration opportunities, the fastest route is email or LinkedIn.
+        </p>
       </div>
-    </a>
-
-    <a href="https://www.polito.it" class="card" target="_blank" rel="noopener">
-      <img src="images/polito.jpg" alt="Politecnico di Torino">
-      <div class="card-content">
-        <h3>Bachelor’s in Electronic Engineering — Politecnico di Torino (2021 – 2024)</h3>
-        <p>Final grade: 109/110. Thesis: FPGA digital control design for agro‑tech sensor (complex ASM).</p>
+      <div class="contact-actions">
+        <a class="button button-primary" href="mailto:gianmarcofortunelli@gmail.com">gianmarcofortunelli@gmail.com</a>
+        <a
+          class="button button-secondary"
+          href="https://www.linkedin.com/in/gianmarco-fortunelli-983218268/"
+          target="_blank"
+          rel="noopener"
+        >LinkedIn</a>
+        <a
+          class="button button-secondary"
+          href="https://github.com/GianmarcoFortunelli"
+          target="_blank"
+          rel="noopener"
+        >GitHub</a>
       </div>
-    </a>
+    </section>
 
-    <a href="https://en.tongji.edu.cn" class="card" target="_blank" rel="noopener">
-      <img src="images/tongji.jpg" alt="Tongji University">
-      <div class="card-content">
-        <h3>Bachelor’s in Information Technology Engineering — Tongji University (2022 – 2024)</h3>
-        <p>Double degree program with PoliTo.</p>
-      </div>
-    </a>
-  </section>
-
- <section id="experience">
-    <h2>Experience</h2>
-
-    <a href="https://www.eurecom.fr/en" class="card" target="_blank" rel="noopener">
-      <img src="images/eurecom.jpg" alt="EURECOM">
-      <div class="card-content">
-        <h3>Graduate Researcher — EURECOM (2025 – Present)</h3>
-        <p>Research under Prof. Pacalet on hardware security and side-channel attacks on RISC-V processors. Focus on cache-timing vulnerabilities and microarchitectural leakage.</p>
-      </div>
-    </a>
-
-    <a href="https://www.teamroboto.it/" class="card" target="_blank" rel="noopener">
-      <img src="images/roboto.jpg" alt="Team RoboTO">
-      <div class="card-content">
-        <h3>Electronics Division Leader — Team RoboTO (2023 – 2025)</h3>
-        <p>Led the Electronics division for DJI RoboMaster. Developed and integrated supercapacitor modules for RMNA 2025 (San Diego). Mentored junior members and coordinated cross‑team activities.</p>
-      </div>
-    </a>
-
-    <a href="https://www.unipg.it/en/" class="card" target="_blank" rel="noopener">
-      <img src="images/unipg.jpg" alt="University of Perugia">
-      <div class="card-content">
-        <h3>Research Collaborator — University of Perugia (2024 – 2025)</h3>
-        <p>Worked with Prof. S. Simonetti on a back‑brace monitoring system using FSR sensors; designed and validated sensing and evaluation pipeline.</p>
-      </div>
-    </a>
-
-    <a href="https://www.polito.it" class="card" target="_blank" rel="noopener">
-      <img src="images/polito.jpg" alt="Politecnico di Torino">
-      <div class="card-content">
-        <h3>Teaching Assistant — Politecnico di Torino (2023 – 2024)</h3>
-        <p>Assisted the Computer Science (Python) course: programming labs, algorithmic design support, and student mentoring.</p>
-      </div>
-    </a>
-
-    <a href="https://en.tongji.edu.cn" class="card" target="_blank" rel="noopener">
-      <img src="images/tongji.jpg" alt="Tongji University">
-      <div class="card-content">
-        <h3>Undergraduate Researcher — Tongji University (2022 – 2023)</h3>
-        <p>EEG‑based brain–computer interfaces for emotion recognition under Prof. X. Gong; work published at IEEE ICNC‑FSKD 2024.</p>
-      </div>
-    </a>
-  </section>
-
-
-  <section id="projects">
-    <h2>Projects</h2>
-   <a href="#" class="card" target="_blank" rel="noopener">
-      <div class="card-content">
-        <h3>Multichannel Conv1D Hardware Accelerator</h3>
-        <p>RTL implementation optimized for strict resource constraints, featuring output-centric scheduling and Croc SoC integration with bare-metal C drivers. Verified via Verilator and an open-source RTL-to-GDSII flow, achieving a 149.5x speedup</p>
-      </div>
-    </a>
-
-    <a href="#" class="card" target="_blank" rel="noopener">
-      <div class="card-content">
-        <h3>DLX Pipelined Processor</h3>
-        <p>RTL implementation of a fully pipelined DLX with full ISA support, branch prediction, hazard management, and optimized datapath. Verified in VHDL with waveform analysis.</p>
-      </div>
-    </a>
-
-    <a href="https://github.com/GianmarcoFortunelli/PACMAN" class="card" target="_blank" rel="noopener">
-      <div class="card-content">
-        <h3>PACMAN on NXP LPC1768</h3>
-        <p>Custom Pac‑Man on LandTiger LPC1768 using Keil uVision. Implemented A* pathfinding, chase/frightened modes, scoring, timing, and sound effects.</p>
-      </div>
-    </a>
-
-    <a href="https://github.com/GianmarcoFortunelli/MultiVth_power_optimization" class="card" target="_blank" rel="noopener">
-      <div class="card-content">
-        <h3>Multi‑Vth Power Optimization</h3>
-        <p>TCL-based flow that reduces leakage by swapping to higher‑Vth cells while preserving timing (automation around Synopsys PrimeTime).</p>
-      </div>
-    </a>
-  </section>
-
-  <section id="publications-awards">
-    <h2>Publications</h2>
-
-    <a href="https://doi.org/10.1109/ICNC-FSKD64080.2024.10702312" class="card" target="_blank" rel="noopener">
-      <div class="card-content">
-        <h3>Phase‑Amplitude Coupling of EEG Applied in Music‑Induced Emotional Recognition Tasks</h3>
-        <p>M. Zhao, G. Fortunelli, Z. He, X. Gong, A. Cohn. Published on IEEE ICNC‑FSKD 2024.</p>
-      </div>
-    </a>
- 
-
-
-<div class="card">
-<div class="card-content">
-<h3>Politong Scholarship</h4>
-<p>Double Degree PoliTo–Tongji</p>
-</div>
-</div>
-
-
-<div class="card">
-<div class="card-content">
-<h3>Erasmus Scholarship</h4>
-<p>Double Degree PoliTo–EURECOM</p>
-</div>
-</div>
-
-
-
-<div class="card">
-<div class="card-content">
-<h3>Matematica e Realtà</h4>
-<p>National Math Competition Winner (2021)</p>
-</div>
-</div>
-</section>
-
-
-<section id="extracurricular">
-  <h2>Extracurricular</h2>
-
-  <a href="https://www.instagram.com/polito_running_club" class="card" target="_blank" rel="noopener">
-    <img src="images/runclub.jpg" alt="Polito Running Club" />
-    <div class="card-content">
-      <h3>Polito Running Club (2023 – 2025)</h3>
-      <p>Co-founded and grew a community to 1,500+ members; organized weekly runs and large-scale events to promote well-being on campus.</p>
-    </div>
-  </a>
-
-  <a href="https://www.polito.it/didattica/didattica-attitudinale/honors-programs/percorso-intraprendenti" class="card" target="_blank" rel="noopener">
-    <img src="images/honors.jpg" alt="Progetto Intraprendenti" />
-    <div class="card-content">
-      <h3>Intraprendenti Project (2022)</h3>
-      <p>Honors program focused on problem-solving and teamwork; selected among the top 200 students at Politecnico di Torino.</p>
-    </div>
-  </a>
-</section>
-
-
-  <section id="skills">
-    <h2>Skills & Languages</h2>
-    <div class="card">
-      <div class="card-content">
-        <h3>Programming</h3>
-        <p>C, Python, TCL, Assembly (MIPS, ARM), MATLAB, Git, LaTeX</p>
-        <h3 style="margin-top:.6rem;">Hardware Description</h3>
-        <p>VHDL</p>
-        <h3 style="margin-top:.6rem;">Tools</h3>
-        <p>KiCad, QuestaSim, Quartus, ModelSim</p>
-        <h3 style="margin-top:.6rem;">Languages</h3>
-        <p>Italian (Native), English (Advanced C1), French (Basic), Chinese (Basic)</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="contacts" id="contact">
-    <div class="contact-buttons">
-      <a href="mailto:gianmarcofortunelli@gmail.com" class="btn">✉️ Email</a>
-      <a href="https://www.linkedin.com/in/gianmarco-fortunelli-983218268/" target="_blank" class="btn" rel="noopener">🔗 LinkedIn</a>
-      <a href="https://github.com/GianmarcoFortunelli" target="_blank" class="btn" rel="noopener">💻 GitHub</a>
-    </div>
-  </section>
-
+  </div>
 </body>
 </html>
-
-
-
-
